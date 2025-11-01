@@ -1,0 +1,299 @@
+#header {
+    background-color: white;
+    color: darkblue;
+    font-size: 250%;
+    padding: 1px;
+}
+
+h2 {
+    background-color: rgb(137, 44, 168);
+    color: white;
+    padding-left: 8px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    margin-left: 5px;
+    margin-right: 5px;
+    font-family: Copperplate;
+
+}
+body, html {
+    margin: 0;
+    padding: 0;
+}
+
+
+/* Layout styling */
+.products {
+    float: left;
+    width: 75%;
+    box-sizing: border-box;
+    padding: 10px;
+}
+.nav-menu {
+    font-size: 20px;
+    font-style: italic;
+}
+
+.nav-menu a {
+    float: left;
+    display: block;
+    color: white;
+    background-color: grey;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 25%;
+    text-decoration: none; 
+}
+.nav-menu a:hover {
+    background-color: darkblue;
+}
+.product-header {
+    background-color: rgb(79, 25, 134);
+    font-family: Copperplate;
+    font-size: 1.5em;
+    text-align: center;
+    
+  }
+
+.products {
+    float: left;
+    width: 75%;
+    background-color: rgb(216, 197, 225);
+}
+.sidebar {
+    float: left;
+    width: 25%;
+}
+.location {
+    float: left;
+    width: 100%;
+}
+.about-us {
+    float: left;
+    width: 100%;
+}
+.services {
+    float: left;
+    width: 100%;
+}
+
+
+.products p {
+    font-family: Copperplate;
+    width: 100%;
+    clear: both;
+    box-sizing: border-box;
+    padding:9px;
+   }
+.products tr {
+   vertical-align: bottom;
+   text-align: center;
+   
+}
+.products td {
+    border: 1px solid;
+
+}
+.product-table {
+    width: 100%;
+    border-collapse: collapse;
+    border: none;
+    margin: 0 auto;
+    text-align: center;
+     }
+
+.product-table td {
+    border: none;
+    vertical-align: middle;
+    padding: 10px;
+    
+}
+
+.product-table img {
+    border: none;
+    outline: none;
+    max-width: 340px;
+    height: auto;
+    display: block;
+    margin: 0 auto;  
+}
+
+.product-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+.product-card {
+flex: 1 1 300px;
+max-width: 340px;
+text-align: center;
+border: 9px solid #682a9b;
+border-radius: 1px;
+padding: 10px;
+box-sizing: border-box;
+  }
+  
+.product-card img {
+max-width: 100%;
+height: auto;
+display: block;
+margin: 0 auto 10px;
+  }
+  
+.product-card p {
+font-family: Copperplate;
+font-size: 16px;
+margin: 0;
+  }
+  
+
+
+.sidebar {
+    float: left;
+    width: 25%;
+    box-sizing: border-box;
+    padding: 10px;
+}
+.sidebar .about-us p {
+    font-style: italic;
+}
+   
+
+.location img,
+.about-us p img {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+.location p, 
+.text-block {
+    padding: 10px;
+    background: white;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.services {
+    width: 100%;
+    clear: both;
+    box-sizing: border-box;
+    padding: 10px;
+}
+.location p, 
+.text-block p {
+    padding: 70px;
+    background: lightgrey;
+    margin-left: 1px;
+    margin-right: 1px;  
+}
+.about-us p {
+    padding: px;
+    background: rgb(255, 255, 255);
+    margin-left: 1px;
+    margin-right: 1px;  
+}
+.about-us img {
+    border: 1px solid #731dc3;
+    border-radius: 5px;
+    padding: 11px;
+    background-color: rgb(204, 206, 203);
+    box-shadow: 2px 2px 10px rgba(45, 108, 163, 0.1);
+}
+
+.submitform input {
+    width: 120px;
+    height: 30px;
+    background-color: rgb(181, 177, 177);
+    color: rgb(74, 14, 106);
+    font-style: italic;
+    font-size: 16px;
+    margin-right: 20px;
+    float: right;
+}
+
+.shoppingcart input {
+    width: 120px;
+    height: 30px;
+    background-color: rgb(192, 56, 56);
+    color: rgb(39, 136, 79);
+    font-style: italic;
+    font-size: 16px;
+    margin-right: 20px;
+    float: right;
+}
+/* Styling for image containers to apply background and reduced padding on sides */
+.location img-container,
+.about-us img-container {
+    display: inline-block;  /* So the background only wraps around the image */
+    background: lightgrey; /* Apply the light grey background around the image */
+    padding: 2px 2px; /* Adjust padding: 10px top and bottom, 5px left and right */
+    margin-left: 5px;
+    margin-right: 5px;
+    border-radius: 5px;  /* Optional: gives rounded corners to the background */
+}
+
+/* Ensuring the images stay within the container */
+.location img,
+.about-us img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 100%;
+    height: auto;
+    border: none; /* Remove any default border */
+}
+
+.cert img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50%;
+}
+.services-image {
+    float: left;
+    width: 40%;
+    overflow: hidden;
+    margin-left: 5px;
+}
+.services-text {
+    float: left;
+    width: 45%;
+    padding-left: 20px;
+}
+.cert {
+    float: left;
+    width: 10%;
+}
+.footer {
+    float: left;
+    width: 100%;
+    background-color: rgb(137, 44, 168);
+    color: white;
+    font-size: 12px;
+    text-align: center;
+}
+
+
+
+/* Clearfix for floated containers */
+.clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+   }
+
+/* Optional footer styling */
+footer {
+   text-align: center;
+   padding: 10px;
+   clear: both;
+   margin-top: 20px;
+}
+
+
