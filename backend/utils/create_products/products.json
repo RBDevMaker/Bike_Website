@@ -1,0 +1,26 @@
+[
+    {
+        "id": 1,
+        "product_name": "Brake Disk",
+        "description": "A high-performance for road bike and serious cyclists",
+        "price": 1500.00,
+        "product_group": "Parts",
+        "image_url": "https://example.com/road-bike.jpg"
+    },
+    {
+        "id": 2,
+        "product_name": "Inner Tube",
+        "description": "A rugged inner tube for off-road adventures",
+        "price": 1200.00,
+        "product_group": "Parts",
+        "image_url": "https://example.com/mountain-bike.jpg"
+    },
+    {
+        "id": 3,
+        "product_name": "Gear Shifter",
+        "description": "A versatile gear shifter for commuting and recreation",
+        "price": 800.00,
+        "product_group": "Parts",
+        "image_url": "https://example.com/hybrid-bike.jpg"
+    }
+]
