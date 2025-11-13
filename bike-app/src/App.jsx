@@ -1,23 +1,23 @@
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import viteLogo from "./assets/images/vite.svg"; // ✅ relative to App.jsx
 import './App.css'
 import React from 'react';
-import Products from '/Users/rachellebriscoe/environment/microservices/bike-app/src/components/Products';
-import Services from '/Users/rachellebriscoe/environment/microservices/bike-app/src/components/Services';
-import Sidebar from '/Users/rachellebriscoe/environment/microservices/bike-app/src/components/Sidebar';
-import rainbowBanner from '/Users/rachellebriscoe/environment/microservices/bike-app/src/assets/images/Rainbow_Banner.svg';
+import Products from '/Users/rachellebriscoe/Customology4U_React_Website/microservices/bike-app/src/components/Products';
+import Services from '/Users/rachellebriscoe/Customology4U_React_Website/microservices/bike-app/src/components/Services';
+import Sidebar from '/Users/rachellebriscoe/Customology4U_React_Website/microservices/bike-app/src/components/Sidebar';
+import rainbowBanner from '/Users/rachellebriscoe/Customology4U_React_Website/microservices/bike-app/src/assets/images/Rainbow_Banner.svg';
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <>
-      
+
       <div className="App">
-      <Sidebar />
-      <Products />
-      <Services />
+        <Sidebar />
+        <Products />
+        <Services />
       </div>
       <div>
         <a href="https://vite.dev" target="_blank">

@@ -1,12 +1,12 @@
 #header {
     background-color: white;
-    color: darkblue;
+    color: rgb(0, 0, 0);
     font-size: 250%;
     padding: 1px;
 }
 
 h2 {
-    background-color: rgb(137, 44, 168);
+    background-color: rgb(57, 59, 182);
     color: white;
     padding-left: 8px;
     padding-top: 2px;
@@ -16,7 +16,9 @@ h2 {
     font-family: Copperplate;
 
 }
-body, html {
+
+body,
+html {
     margin: 0;
     padding: 0;
 }
@@ -29,6 +31,7 @@ body, html {
     box-sizing: border-box;
     padding: 10px;
 }
+
 .nav-menu {
     font-size: 20px;
     font-style: italic;
@@ -43,36 +46,42 @@ body, html {
     padding-top: 10px;
     padding-bottom: 10px;
     width: 25%;
-    text-decoration: none; 
+    text-decoration: none;
 }
+
 .nav-menu a:hover {
     background-color: darkblue;
 }
+
 .product-header {
-    background-color: rgb(79, 25, 134);
+    background-color: rgb(216, 73, 193);
     font-family: Copperplate;
     font-size: 1.5em;
     text-align: center;
-    
-  }
+
+}
 
 .products {
     float: left;
     width: 75%;
-    background-color: rgb(216, 197, 225);
+    background-color: rgb(255, 255, 255);
 }
+
 .sidebar {
     float: left;
     width: 25%;
 }
+
 .location {
     float: left;
     width: 100%;
 }
+
 .about-us {
     float: left;
     width: 100%;
 }
+
 .services {
     float: left;
     width: 100%;
@@ -84,30 +93,33 @@ body, html {
     width: 100%;
     clear: both;
     box-sizing: border-box;
-    padding:9px;
-   }
-.products tr {
-   vertical-align: bottom;
-   text-align: center;
-   
+    padding: 9px;
 }
+
+.products tr {
+    vertical-align: bottom;
+    text-align: center;
+
+}
+
 .products td {
     border: 1px solid;
 
 }
+
 .product-table {
     width: 100%;
     border-collapse: collapse;
     border: none;
     margin: 0 auto;
     text-align: center;
-     }
+}
 
 .product-table td {
     border: none;
     vertical-align: middle;
     padding: 10px;
-    
+
 }
 
 .product-table img {
@@ -116,7 +128,7 @@ body, html {
     max-width: 340px;
     height: auto;
     display: block;
-    margin: 0 auto;  
+    margin: 0 auto;
 }
 
 .product-container {
@@ -127,31 +139,31 @@ body, html {
     max-width: 1000px;
     margin: 0 auto;
     padding: 20px;
-  }
-  
+}
+
 .product-card {
-flex: 1 1 300px;
-max-width: 340px;
-text-align: center;
-border: 9px solid #682a9b;
-border-radius: 1px;
-padding: 10px;
-box-sizing: border-box;
-  }
-  
+    flex: 1 1 300px;
+    max-width: 340px;
+    text-align: center;
+    border: 9px solid rgb(57, 59, 182);
+    border-radius: 1px;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
 .product-card img {
-max-width: 100%;
-height: auto;
-display: block;
-margin: 0 auto 10px;
-  }
-  
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto 10px;
+}
+
 .product-card p {
-font-family: Copperplate;
-font-size: 16px;
-margin: 0;
-  }
-  
+    font-family: Copperplate;
+    font-size: 16px;
+    margin: 0;
+}
+
 
 
 .sidebar {
@@ -160,10 +172,11 @@ margin: 0;
     box-sizing: border-box;
     padding: 10px;
 }
+
 .sidebar .about-us p {
     font-style: italic;
 }
-   
+
 
 .location img,
 .about-us p img {
@@ -171,7 +184,8 @@ margin: 0;
     margin-right: auto;
     text-align: center;
 }
-.location p, 
+
+.location p,
 .text-block {
     padding: 10px;
     background: white;
@@ -185,21 +199,24 @@ margin: 0;
     box-sizing: border-box;
     padding: 10px;
 }
-.location p, 
+
+.location p,
 .text-block p {
     padding: 70px;
     background: lightgrey;
     margin-left: 1px;
-    margin-right: 1px;  
+    margin-right: 1px;
 }
+
 .about-us p {
     padding: px;
     background: rgb(255, 255, 255);
     margin-left: 1px;
-    margin-right: 1px;  
+    margin-right: 1px;
 }
+
 .about-us img {
-    border: 1px solid #731dc3;
+    border: 1px solid rgb(57, 59, 182);
     border-radius: 5px;
     padding: 11px;
     background-color: rgb(204, 206, 203);
@@ -227,15 +244,20 @@ margin: 0;
     margin-right: 20px;
     float: right;
 }
+
 /* Styling for image containers to apply background and reduced padding on sides */
 .location img-container,
 .about-us img-container {
-    display: inline-block;  /* So the background only wraps around the image */
-    background: lightgrey; /* Apply the light grey background around the image */
-    padding: 2px 2px; /* Adjust padding: 10px top and bottom, 5px left and right */
+    display: inline-block;
+    /* So the background only wraps around the image */
+    background: lightgrey;
+    /* Apply the light grey background around the image */
+    padding: 2px 2px;
+    /* Adjust padding: 10px top and bottom, 5px left and right */
     margin-left: 5px;
     margin-right: 5px;
-    border-radius: 5px;  /* Optional: gives rounded corners to the background */
+    border-radius: 5px;
+    /* Optional: gives rounded corners to the background */
 }
 
 /* Ensuring the images stay within the container */
@@ -246,7 +268,8 @@ margin: 0;
     margin-right: auto;
     max-width: 100%;
     height: auto;
-    border: none; /* Remove any default border */
+    border: none;
+    /* Remove any default border */
 }
 
 .cert img {
@@ -255,25 +278,29 @@ margin: 0;
     margin-right: auto;
     margin-top: 50%;
 }
+
 .services-image {
     float: left;
     width: 40%;
     overflow: hidden;
     margin-left: 5px;
 }
+
 .services-text {
     float: left;
     width: 45%;
     padding-left: 20px;
 }
+
 .cert {
     float: left;
     width: 10%;
 }
+
 .footer {
     float: left;
     width: 100%;
-    background-color: rgb(137, 44, 168);
+    background-color: rgb(0, 0, 3);
     color: white;
     font-size: 12px;
     text-align: center;
@@ -286,14 +313,12 @@ margin: 0;
     content: "";
     display: table;
     clear: both;
-   }
+}
 
 /* Optional footer styling */
 footer {
-   text-align: center;
-   padding: 10px;
-   clear: both;
-   margin-top: 20px;
+    text-align: center;
+    padding: 10px;
+    clear: both;
+    margin-top: 20px;
 }
-
-
