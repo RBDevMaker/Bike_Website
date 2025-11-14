@@ -1,0 +1,82 @@
+[
+    {
+        "id": 1,
+        "product_name": "Trending Coming Soon",
+        "description": "A high-performance for road bike and serious cyclists",
+        "price": 20.00,
+        "product_group": "Shirts",
+        "image_url": "https://example.com/road-bike.jpg"
+    },
+    {
+        "id": 2,
+        "product_name": "Key Chain",
+        "description": "A rugged inner tube for off-road adventures",
+        "price": 1200.00,
+        "product_group": "Key Chains",
+        "image_url": "https://example.com/mountain-bike.jpg"
+    },
+    {
+        "id": 3,
+        "product_name": "Sports",
+        "description": "A versatile gear shifter for commuting and recreation",
+        "price": 800.00,
+        "product_group": "Misc",
+        "image_url": "https://example.com/hybrid-bike.jpg"
+    },
+    {
+        "id": 4,
+        "product_name": "Trending Coming Soon",
+        "description": "A high-performance for road bike and serious cyclists",
+        "price": 20.00,
+        "product_group": "Shirts",
+        "image_url": "https://example.com/road-bike.jpg"
+    },
+    {
+        "id": 5,
+        "product_name": "Key Chain",
+        "description": "A rugged inner tube for off-road adventures",
+        "price": 1200.00,
+        "product_group": "Key Chains",
+        "image_url": "https://example.com/mountain-bike.jpg"
+    },
+    {
+        "id": 6,
+        "product_name": "Sports",
+        "description": "A versatile gear shifter for commuting and recreation",
+        "price": 800.00,
+        "product_group": "Misc",
+        "image_url": "https://example.com/hybrid-bike.jpg"
+    },
+    {
+        "id": 7,
+        "product_name": "Sports",
+        "description": "A versatile gear shifter for commuting and recreation",
+        "price": 800.00,
+        "product_group": "Misc",
+        "image_url": "https://example.com/hybrid-bike.jpg"
+    },
+    {
+        "id": 8,
+        "product_name": "Trending Coming Soon",
+        "description": "A high-performance for road bike and serious cyclists",
+        "price": 20.00,
+        "product_group": "Shirts",
+        "image_url": "https://example.com/road-bike.jpg"
+    },
+    {
+        "id": 9,
+        "product_name": "Key Chain",
+        "description": "A rugged inner tube for off-road adventures",
+        "price": 1200.00,
+        "product_group": "Key Chains",
+        "image_url": "https://example.com/mountain-bike.jpg"
+    },
+    {
+        "id": 10,
+        "product_name": "Sports",
+        "description": "A versatile gear shifter for commuting and recreation",
+        "price": 800.00,
+        "product_group": "Misc",
+        "image_url": "https://example.com/hybrid-bike.jpg"
+    }
+]

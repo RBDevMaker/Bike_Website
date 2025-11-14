@@ -1,0 +1,200 @@
+[
+    {
+        "id": 1,
+        "product_name": "",
+        "description": "Description for .DS_Store",
+        "price": 10.0,
+        "product_group": "Default Group",
+        "image_url": "https://bikeimages995507554189.s3.us-east-1.amazonaws.com/images/.DS_Store",
+        "image_name": ".DS_Store"
+    },
+    {
+        "id": 2,
+        "product_name": "Sports ",
+        "description": "Description for Sports .jpg",
+        "price": 20.0,
+        "product_group": "Default Group",
+        "image_url": "https://bikeimages995507554189.s3.us-east-1.amazonaws.com/images/Sports .jpg",
+        "image_name": "Sports .jpg"
+    },
+    {
+        "id": 3,
+        "product_name": "bell",
+        "description": "Description for bell.jpeg",
+        "price": 30.0,
+        "product_group": "Default Group",
+        "image_url": "https://bikeimages995507554189.s3.us-east-1.amazonaws.com/images/bell.jpeg",
+        "image_name": "bell.jpeg"
+    },
+    {
+        "id": 4,
+        "product_name": "biking-outdoors",
+        "description": "Description for biking-outdoors.jpeg",
+        "price": 40.0,
+        "product_group": "Default Group",
+        "image_url": "https://bikeimages995507554189.s3.us-east-1.amazonaws.com/images/biking-outdoors.jpeg",
+        "image_name": "biking-outdoors.jpeg"
+    },
+    {
+        "id": 5,
+        "product_name": "brake-disk",
+        "description": "Description for brake-disk.jpeg",
+        "price": 50.0,
+        "product_group": "Default Group",
+        "image_url": "https://bikeimages995507554189.s3.us-east-1.amazonaws.com/images/brake-disk.jpeg",
+        "image_name": "brake-disk.jpeg"
+    },
+    {
+        "id": 6,
+        "product_name": "cassette",
+        "description": "Description for cassette.jpeg",
+        "price": 60.0,
+        "product_group": "Default Group",
+        "image_url": "https://bikeimages995507554189.s3.us-east-1.amazonaws.com/images/cassette.jpeg",
+        "image_name": "cassette.jpeg"
+    },
+    {
+        "id": 7,
+        "product_name": "chain",
+        "description": "Description for chain.jpeg",
+        "price": 70.0,
+        "product_group": "Default Group",
+        "image_url": "https://bikeimages995507554189.s3.us-east-1.amazonaws.com/images/chain.jpeg",
+        "image_name": "chain.jpeg"
+    },
+    {
+        "id": 8,
+        "product_name": "crank-arm",
+        "description": "Description for crank-arm.jpeg",
+        "price": 80.0,
+        "product_group": "Default Group",
+        "image_url": "https://bikeimages995507554189.s3.us-east-1.amazonaws.com/images/crank-arm.jpeg",
+        "image_name": "crank-arm.jpeg"
+    },
+    {
+        "id": 9,
+        "product_name": "gear-shifter",
+        "description": "Description for gear-shifter.jpeg",
+        "price": 90.0,
+        "product_group": "Default Group",
+        "image_url": "https://bikeimages995507554189.s3.us-east-1.amazonaws.com/images/gear-shifter.jpeg",
+        "image_name": "gear-shifter.jpeg"
+    },
+    {
+        "id": 10,
+        "product_name": "hydraulic-brake",
+        "description": "Description for hydraulic-brake.jpeg",
+        "price": 100.0,
+        "product_group": "Default Group",
+        "image_url": "https://bikeimages995507554189.s3.us-east-1.amazonaws.com/images/hydraulic-brake.jpeg",
+        "image_name": "hydraulic-brake.jpeg"
+    },
+    {
+        "id": 11,
+        "product_name": "inner-tube",
+        "description": "Description for inner-tube.jpeg",
+        "price": 110.0,
+        "product_group": "Default Group",
+        "image_url": "https://bikeimages995507554189.s3.us-east-1.amazonaws.com/images/inner-tube.jpeg",
+        "image_name": "inner-tube.jpeg"
+    },
+    {
+        "id": 12,
+        "product_name": "logo-black",
+        "description": "Description for logo-black.png",
+        "price": 120.0,
+        "product_group": "Default Group",
+        "image_url": "https://bikeimages995507554189.s3.us-east-1.amazonaws.com/images/logo-black.png",
+        "image_name": "logo-black.png"
+    },
+    {
+        "id": 13,
+        "product_name": "logo-white",
+        "description": "Description for logo-white.png",
+        "price": 130.0,
+        "product_group": "Default Group",
+        "image_url": "https://bikeimages995507554189.s3.us-east-1.amazonaws.com/images/logo-white.png",
+        "image_name": "logo-white.png"
+    },
+    {
+        "id": 14,
+        "product_name": "map",
+        "description": "Description for map.jpeg",
+        "price": 140.0,
+        "product_group": "Default Group",
+        "image_url": "https://bikeimages995507554189.s3.us-east-1.amazonaws.com/images/map.jpeg",
+        "image_name": "map.jpeg"
+    },
+    {
+        "id": 15,
+        "product_name": "pedals",
+        "description": "Description for pedals.jpeg",
+        "price": 150.0,
+        "product_group": "Default Group",
+        "image_url": "https://bikeimages995507554189.s3.us-east-1.amazonaws.com/images/pedals.jpeg",
+        "image_name": "pedals.jpeg"
+    },
+    {
+        "id": 16,
+        "product_name": "rear-light",
+        "description": "Description for rear-light.jpeg",
+        "price": 160.0,
+        "product_group": "Default Group",
+        "image_url": "https://bikeimages995507554189.s3.us-east-1.amazonaws.com/images/rear-light.jpeg",
+        "image_name": "rear-light.jpeg"
+    },
+    {
+        "id": 17,
+        "product_name": "repair",
+        "description": "Description for repair.jpeg",
+        "price": 170.0,
+        "product_group": "Default Group",
+        "image_url": "https://bikeimages995507554189.s3.us-east-1.amazonaws.com/images/repair.jpeg",
+        "image_name": "repair.jpeg"
+    },
+    {
+        "id": 18,
+        "product_name": "seat",
+        "description": "Description for seat.jpeg",
+        "price": 180.0,
+        "product_group": "Default Group",
+        "image_url": "https://bikeimages995507554189.s3.us-east-1.amazonaws.com/images/seat.jpeg",
+        "image_name": "seat.jpeg"
+    },
+    {
+        "id": 19,
+        "product_name": "specialist",
+        "description": "Description for specialist.png",
+        "price": 190.0,
+        "product_group": "Default Group",
+        "image_url": "https://bikeimages995507554189.s3.us-east-1.amazonaws.com/images/specialist.png",
+        "image_name": "specialist.png"
+    },
+    {
+        "id": 20,
+        "product_name": "sports-glasses",
+        "description": "Description for sports-glasses.jpeg",
+        "price": 200.0,
+        "product_group": "Default Group",
+        "image_url": "https://bikeimages995507554189.s3.us-east-1.amazonaws.com/images/sports-glasses.jpeg",
+        "image_name": "sports-glasses.jpeg"
+    },
+    {
+        "id": 21,
+        "product_name": "vite",
+        "description": "Description for vite.svg",
+        "price": 210.0,
+        "product_group": "Default Group",
+        "image_url": "https://bikeimages995507554189.s3.us-east-1.amazonaws.com/images/vite.svg",
+        "image_name": "vite.svg"
+    },
+    {
+        "id": 22,
+        "product_name": "wheel",
+        "description": "Description for wheel.jpeg",
+        "price": 220.0,
+        "product_group": "Default Group",
+        "image_url": "https://bikeimages995507554189.s3.us-east-1.amazonaws.com/images/wheel.jpeg",
+        "image_name": "wheel.jpeg"
+    }
+]
