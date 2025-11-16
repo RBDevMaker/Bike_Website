@@ -9,4 +9,22 @@ manifest_hash = ""
 packagetype = "Zip"
 functions = ["GetProductsFunction"]
 
+[function_build_definitions.b4232bf6-22d8-43ef-98a8-a4755dbb9e7e]
+codeuri = "/Users/rachellebriscoe/Bike_Website-2/bike-app/services/bike-service/handlers/get_orders"
+runtime = "python3.12"
+architecture = "x86_64"
+handler = "get_orders.lambda_handler"
+manifest_hash = ""
+packagetype = "Zip"
+functions = ["GetOrdersFunction"]
+
+[function_build_definitions.2aaef225-d448-42da-86dc-30e05a67b36f]
+codeuri = "/Users/rachellebriscoe/Bike_Website-2/bike-app/services/bike-service/handlers/get_order"
+runtime = "python3.12"
+architecture = "x86_64"
+handler = "get_order.lambda_handler"
+manifest_hash = ""
+packagetype = "Zip"
+functions = ["GetOrderFunction"]
+
 [layer_build_definitions]

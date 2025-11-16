@@ -29,10 +29,61 @@ Resources:
             Path: /products
             Method: get
 
+  GetOrdersFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: handlers/get_orders
+      Handler: get_orders.lambda_handler
+      Runtime: python3.12
+      Architectures:
+        - x86_64
+      Policies:
+        - DynamoDBReadPolicy:
+            TableName: !Ref OrdersTable
+      Events:
+        GetOrders:
+          Type: Api
+          Properties:
+            Path: /orders
+            Method: get
+
+  GetOrderFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: handlers/get_order
+      Handler: get_order.lambda_handler
+      Runtime: python3.12
+      Architectures:
+        - x86_64
+      Policies:
+        - DynamoDBReadPolicy:
+            TableName: !Ref OrdersTable
+      Events:
+        GetOrder:
+          Type: Api
+          Properties:
+            Path: /orders/{id}
+            Method: get
+
   ProductsTable:
     Type: "AWS::DynamoDB::Table"
     Properties:
       TableName: BikeProducts
+      AttributeDefinitions:
+        - AttributeName: id
+          AttributeType: S
+      KeySchema:
+        - AttributeName: id
+          KeyType: HASH
+      BillingMode: PROVISIONED
+      ProvisionedThroughput:
+        ReadCapacityUnits: 1
+        WriteCapacityUnits: 1
+
+  OrdersTable:
+    Type: "AWS::DynamoDB::Table"
+    Properties:
+      TableName: Orders
       AttributeDefinitions:
         - AttributeName: id
           AttributeType: S
@@ -53,4 +104,16 @@ Outputs:
     Value: !GetAtt GetProductsFunction.Arn
   EndpointForGetProducts:
     Description: "API Gateway endpoint URL for Get Products function"
-    Value: !Sub "https://${ServerlessRestApi}.execute-api.${AWS::Region}.${AWS::URLSuffix}/Prod/get_products/"
+    Value: !Sub "https://${ServerlessRestApi}.execute-api.${AWS::Region}.${AWS::URLSuffix}/Prod/products/"
+  GetOrdersFunction:
+    Description: "GetOrdersFunction ARN"
+    Value: !GetAtt GetOrdersFunction.Arn
+  EndpointForGetOrders:
+    Description: "API Gateway endpoint URL for Get Orders function"
+    Value: !Sub "https://${ServerlessRestApi}.execute-api.${AWS::Region}.${AWS::URLSuffix}/Prod/orders/"
+  GetOrderFunction:
+    Description: "GetOrderFunction ARN"
+    Value: !GetAtt GetOrderFunction.Arn
+  EndpointForGetOrder:
+    Description: "API Gateway endpoint URL for Get Order function"
+    Value: !Sub "https://${ServerlessRestApi}.execute-api.${AWS::Region}.${AWS::URLSuffix}/Prod/orders/{id}"
