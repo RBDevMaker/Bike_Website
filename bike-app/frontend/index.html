@@ -28,7 +28,8 @@
 
 
     <div class="nav-menu">
-        <a href="#products-link">Products</a>
+        <a href="#" onclick="showSection('products'); return false;">Products</a>
+        <a href="#" onclick="showSection('orders'); return false;">Order History</a>
         <a href="#services-link">Account</a>
         <a href="#location-link">Location</a>
         <a href="#about-us-link">Cart</a>
@@ -37,10 +38,13 @@
 
     <main>
 
+        <!-- React Orders Component Mount Point -->
+        <div id="root" style="display: none;"></div>
+
         <!-- Main layout: products + sidebar -->
         <div class="clearfix"></div>
 
-        <section class="products" id="products-link">
+        <section class="products" id="products-section">
             <h2>Products</h2>
 
             <div class="product-container">
@@ -165,7 +169,7 @@
 
         </section>
 
-        <aside class="sidebar">
+        <aside class="sidebar" id="sidebar-section">
             <section class="location">
                 <div class="location" id="location-link">
                     <h2>Store Location</h2>
@@ -247,6 +251,30 @@
         <div class="footer">
             <p>&copy; 2025, Customology 4 U .LLC All rights reserved.</p>
         </div>
+
+        <script>
+            function showSection(section) {
+                const productsSection = document.getElementById('products-section');
+                const ordersSection = document.getElementById('root');
+                const sidebarSection = document.getElementById('sidebar-section');
+
+                if (section === 'products') {
+                    productsSection.style.display = 'block';
+                    ordersSection.style.display = 'none';
+                    sidebarSection.style.display = 'block';
+                } else if (section === 'orders') {
+                    productsSection.style.display = 'none';
+                    ordersSection.style.display = 'block';
+                    sidebarSection.style.display = 'none';
+                }
+            }
+
+            // Show products by default on page load
+            window.addEventListener('DOMContentLoaded', function () {
+                showSection('products');
+            });
+        </script>
+        <script type="module" src="/src/main.jsx"></script>
 </body>
 
 </html>

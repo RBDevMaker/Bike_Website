@@ -37,7 +37,7 @@ const Products = () => {
     if (loading) {
         return (
             <div className="products" id="products-link">
-                <h2>Our Products</h2>
+                <h2>Products</h2>
                 <p>Loading products...</p>
             </div>
         );
@@ -46,7 +46,7 @@ const Products = () => {
     if (error) {
         return (
             <div className="products" id="products-link">
-                <h2>Our Products</h2>
+                <h2>Products</h2>
                 <p>{error}</p>
             </div>
         );
@@ -54,8 +54,7 @@ const Products = () => {
 
     return (
         <div className="products" id="products-link">
-            <h2>Our Products</h2>
-            <p>Found {products.length} products</p>
+            <h2>Products</h2>
             {products.length === 0 && <p>No products to display</p>}
             <div className="products-grid">
                 {products.map((product) => (

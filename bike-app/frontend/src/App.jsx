@@ -1,15 +1,10 @@
 import React from 'react';
-import './App.css'
-import Products from './components/Products';
-import Services from './components/Services';
-import Sidebar from './components/Sidebar';
+import Orders from './components/Orders';
 
 function App() {
   return (
     <div className="App">
-      <Sidebar />
-      <Products />
-      <Services />
+      <Orders />
     </div>
   )
 }

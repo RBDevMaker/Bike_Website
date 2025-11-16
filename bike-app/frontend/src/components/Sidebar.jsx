@@ -1,11 +1,9 @@
 import { useCallback } from 'react';
 import PropTypes from 'prop-types';
-import bikingOutdoorsImage from '../assets/images/biking-outdoors.jpeg'
-import mapImage from '../assets/images/map.jpeg'
 
-// once the .env is added and the S3 bucket is linked, use the S3 bucket images, until then use the public images directory
-// S3 bucket implementation occurs in lab 2
-// const imageUrl = import.meta.env.VITE_APP_S3_BUCKET_URL ? import.meta.env.VITE_APP_S3_BUCKET_URL : 'images';
+// Images are in public folder, use direct paths
+const bikingOutdoorsImage = '/images/biking-outdoors.jpeg';
+const mapImage = '/images/map.jpeg';
 
 const Sidebar = ({ setBannerColor }) => {
   const handleColorClick = useCallback(

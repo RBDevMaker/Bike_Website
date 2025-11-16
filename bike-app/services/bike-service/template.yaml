@@ -47,7 +47,7 @@ Resources:
             Path: /orders
             Method: get
 
-  GetOrderFunction:
+  GetOrderDetailsFunction:
     Type: AWS::Serverless::Function
     Properties:
       CodeUri: handlers/get_order
@@ -59,7 +59,7 @@ Resources:
         - DynamoDBReadPolicy:
             TableName: !Ref OrdersTable
       Events:
-        GetOrder:
+        GetOrderDetails:
           Type: Api
           Properties:
             Path: /orders/{id}
@@ -111,9 +111,9 @@ Outputs:
   EndpointForGetOrders:
     Description: "API Gateway endpoint URL for Get Orders function"
     Value: !Sub "https://${ServerlessRestApi}.execute-api.${AWS::Region}.${AWS::URLSuffix}/Prod/orders/"
-  GetOrderFunction:
-    Description: "GetOrderFunction ARN"
-    Value: !GetAtt GetOrderFunction.Arn
-  EndpointForGetOrder:
-    Description: "API Gateway endpoint URL for Get Order function"
+  GetOrderDetailsFunction:
+    Description: "GetOrderDetailsFunction ARN"
+    Value: !GetAtt GetOrderDetailsFunction.Arn
+  EndpointForGetOrderDetails:
+    Description: "API Gateway endpoint URL for Get Order Details function"
     Value: !Sub "https://${ServerlessRestApi}.execute-api.${AWS::Region}.${AWS::URLSuffix}/Prod/orders/{id}"
