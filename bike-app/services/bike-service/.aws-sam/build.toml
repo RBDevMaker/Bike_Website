@@ -27,4 +27,13 @@ manifest_hash = ""
 packagetype = "Zip"
 functions = ["GetOrderDetailsFunction"]
 
+[function_build_definitions.4211d4f1-1f21-4f88-b707-2a8f5e359b77]
+codeuri = "/Users/rachellebriscoe/Bike_Website-2/bike-app/services/bike-service/handlers/create_order.py"
+runtime = "python3.12"
+architecture = "x86_64"
+handler = "create_order.lambda_handler"
+manifest_hash = ""
+packagetype = "Zip"
+functions = ["CreateOrderFunction"]
+
 [layer_build_definitions]

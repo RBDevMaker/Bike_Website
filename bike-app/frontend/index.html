@@ -30,9 +30,9 @@
     <div class="nav-menu">
         <a href="#" onclick="showSection('products'); return false;">Products</a>
         <a href="#" onclick="showSection('orders'); return false;">Order History</a>
+        <a href="#" onclick="showSection('cart'); return false;">Cart (0)</a>
         <a href="#services-link">Account</a>
         <a href="#location-link">Location</a>
-        <a href="#about-us-link">Cart</a>
 
     </div>
 
@@ -40,6 +40,60 @@
 
         <!-- React Orders Component Mount Point -->
         <div id="root" style="display: none;"></div>
+
+        <!-- Cart Section -->
+        <div id="cart-section" class="cart" style="display: none;"></div>
+
+        <!-- Payment Section -->
+        <div id="payment-section" class="payment" style="display: none;">
+            <h2>Payment</h2>
+            <div style="max-width: 600px; margin: 0 auto; background: white; padding: 30px; border-radius: 8px;">
+                <h3>Order Summary</h3>
+                <div id="payment-summary"></div>
+
+                <hr style="margin: 20px 0;">
+
+                <h3>Payment Information</h3>
+                <form id="payment-form" onsubmit="processPayment(event)">
+                    <div style="margin-bottom: 15px;">
+                        <label style="display: block; margin-bottom: 5px; font-weight: bold;">Card Number</label>
+                        <input type="text" id="card-number" placeholder="1234 5678 9012 3456" maxlength="19" required
+                            oninput="formatCardNumber(this)"
+                            style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 4px;">
+                    </div>
+                    <div style="display: flex; gap: 30px; margin-bottom: 15px;">
+                        <div style="flex: 1;">
+                            <label style="display: block; margin-bottom: 5px; font-weight: bold;">Expiration
+                                Date</label>
+                            <input type="text" id="expiry-date" placeholder="MM/YY" maxlength="5" required
+                                oninput="formatExpiryDate(this)"
+                                style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 4px;">
+                        </div>
+                        <div style="flex: 1;">
+                            <label style="display: block; margin-bottom: 5px; font-weight: bold;">CVV</label>
+                            <input type="text" placeholder="123" maxlength="4" required
+                                style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 4px;">
+                        </div>
+                    </div>
+                    <div style="margin-bottom: 20px;">
+                        <label style="display: block; margin-bottom: 5px; font-weight: bold;">Cardholder Name</label>
+                        <input type="text" placeholder="John Doe" required
+                            style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 4px;">
+                    </div>
+
+                    <div style="display: flex; gap: 10px;">
+                        <button type="button" onclick="showSection('cart')"
+                            style="flex: 1; padding: 12px; background: #ccc; color: #333; border: none; border-radius: 4px; cursor: pointer; font-size: 1em;">
+                            Back to Cart
+                        </button>
+                        <button type="submit"
+                            style="flex: 2; padding: 12px; background: #1952b6; color: white; border: none; border-radius: 4px; cursor: pointer; font-size: 1em; font-weight: bold;">
+                            Complete Payment
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
 
         <!-- Main layout: products + sidebar -->
         <div class="clearfix"></div>
@@ -52,62 +106,77 @@
                     <img src="https://bikeimages995507554189.s3.us-east-1.amazonaws.com/images/brake-disk.jpeg"
                         alt="Brake Disk">
                     <p>Brake Disk $37.50</p>
+                    <button class="add-to-cart-btn" onclick="addToCart('brake disk', 10, '45.00')">Add to Cart</button>
                 </div>
                 <div class="product-card">
                     <img src="https://bikeimages995507554189.s3.us-east-1.amazonaws.com/images/inner-tube.jpeg"
                         alt="Inner Tube">
                     <p>Inner Tube $70.50</p>
+                    <button class="add-to-cart-btn" onclick="addToCart('inner tube', 6, '14.00')">Add to Cart</button>
                 </div>
                 <div class="product-card">
                     <img src="https://bikeimages995507554189.s3.us-east-1.amazonaws.com/images/gear-shifter.jpeg"
                         alt="Gear Shifter">
                     <p>Gear Shifter $59.50</p>
+                    <button class="add-to-cart-btn" onclick="addToCart('gear shifter', 5, '32.00')">Add to Cart</button>
                 </div>
                 <div class="product-card">
                     <img src="https://bikeimages995507554189.s3.us-east-1.amazonaws.com/images/bell.jpeg" alt="Bell">
                     <p>Bell $26.50</p>
+                    <button class="add-to-cart-btn" onclick="addToCart('bell', 4, '18.00')">Add to Cart</button>
                 </div>
                 <div class="product-card">
                     <img src="https://bikeimages995507554189.s3.us-east-1.amazonaws.com/images/crank-arm.jpeg"
                         alt="Crank Arm">
                     <p>Crank Arm $54.00</p>
+                    <button class="add-to-cart-btn" onclick="addToCart('crankset', 2, '215.00')">Add to Cart</button>
                 </div>
                 <div class="product-card">
                     <img src="https://bikeimages995507554189.s3.us-east-1.amazonaws.com/images/cassette.jpeg"
                         alt="Cassette">
                     <p>Cassette $43.00</p>
+                    <button class="add-to-cart-btn" onclick="addToCart('cassette', 1, '50.00')">Add to Cart</button>
                 </div>
                 <div class="product-card">
                     <img src="https://bikeimages995507554189.s3.us-east-1.amazonaws.com/images/rear-light.jpeg"
                         alt="Rear Light">
                     <p>Rear Light $98.00</p>
+                    <button class="add-to-cart-btn" onclick="addToCart('rear light', 13, '98.00')">Add to Cart</button>
                 </div>
                 <div class="product-card">
                     <img src="https://bikeimages995507554189.s3.us-east-1.amazonaws.com/images/wheel.jpeg" alt="Wheel">
                     <p>Wheel $131.00</p>
+                    <button class="add-to-cart-btn" onclick="addToCart('wheel', 8, '179.00')">Add to Cart</button>
                 </div>
                 <div class="product-card">
                     <img src="https://bikeimages995507554189.s3.us-east-1.amazonaws.com/images/seat.jpeg" alt="Seat">
                     <p>Seat $109.00</p>
+                    <button class="add-to-cart-btn" onclick="addToCart('saddle', 7, '55.00')">Add to Cart</button>
                 </div>
                 <div class="product-card">
                     <img src="https://bikeimages995507554189.s3.us-east-1.amazonaws.com/images/chain.jpeg" alt="Chain">
                     <p>Chain $48.50</p>
+                    <button class="add-to-cart-btn" onclick="addToCart('chain', 3, '35.00')">Add to Cart</button>
                 </div>
                 <div class="product-card">
                     <img src="https://bikeimages995507554189.s3.us-east-1.amazonaws.com/images/hydraulic-brake.jpeg"
                         alt="Hydraulic Brake">
                     <p>Hydraulic Brake $65.00</p>
+                    <button class="add-to-cart-btn" onclick="addToCart('hydraulic brake', 11, '69.00')">Add to
+                        Cart</button>
                 </div>
                 <div class="product-card">
                     <img src="https://bikeimages995507554189.s3.us-east-1.amazonaws.com/images/pedals.jpeg"
                         alt="Pedals">
                     <p>Pedals $92.50</p>
+                    <button class="add-to-cart-btn" onclick="addToCart('pedals', 9, '79.00')">Add to Cart</button>
                 </div>
                 <div class="product-card">
                     <img src="https://bikeimages995507554189.s3.us-east-1.amazonaws.com/images/sports-glasses.jpeg"
                         alt="Sports Glasses">
                     <p>Sports Glasses $120.00</p>
+                    <button class="add-to-cart-btn" onclick="addToCart('sports glasses', 12, '129.00')">Add to
+                        Cart</button>
                 </div>
             </div>
             </div>
@@ -249,28 +318,307 @@
             </div>
         </div>
         <div class="footer">
-            <p>&copy; 2025, Customology 4 U .LLC All rights reserved.</p>
+            <p>&copy; 2025, Navon Technologies, LLC | Navon WebDesigns All rights reserved.</p>
         </div>
 
         <script>
+            // Cart management
+            let cart = JSON.parse(localStorage.getItem('bikeCart')) || {};
+
+            function saveCart() {
+                localStorage.setItem('bikeCart', JSON.stringify(cart));
+                updateCartCount();
+            }
+
+            function updateCartCount() {
+                const count = Object.values(cart).reduce((sum, item) => sum + item.quantity, 0);
+                const cartLinks = document.querySelectorAll('.nav-menu a[onclick*="cart"]');
+                cartLinks.forEach(link => {
+                    link.textContent = `Cart (${count})`;
+                });
+            }
+
+            function addToCart(productName, productId, price) {
+                if (cart[productName]) {
+                    cart[productName].quantity += 1;
+                } else {
+                    cart[productName] = {
+                        id: productId,
+                        quantity: 1,
+                        price: price
+                    };
+                }
+                saveCart();
+                alert(`${productName} added to cart!`);
+            }
+
             function showSection(section) {
                 const productsSection = document.getElementById('products-section');
                 const ordersSection = document.getElementById('root');
                 const sidebarSection = document.getElementById('sidebar-section');
+                const cartSection = document.getElementById('cart-section');
+                const paymentSection = document.getElementById('payment-section');
+
+                // Hide all sections
+                productsSection.style.display = 'none';
+                ordersSection.style.display = 'none';
+                sidebarSection.style.display = 'none';
+                if (cartSection) cartSection.style.display = 'none';
+                if (paymentSection) paymentSection.style.display = 'none';
 
                 if (section === 'products') {
                     productsSection.style.display = 'block';
-                    ordersSection.style.display = 'none';
                     sidebarSection.style.display = 'block';
                 } else if (section === 'orders') {
-                    productsSection.style.display = 'none';
                     ordersSection.style.display = 'block';
-                    sidebarSection.style.display = 'none';
+                } else if (section === 'cart') {
+                    if (cartSection) {
+                        cartSection.style.display = 'block';
+                        displayCart();
+                    }
+                } else if (section === 'payment') {
+                    if (paymentSection) {
+                        paymentSection.style.display = 'block';
+                        displayPaymentSummary();
+                    }
+                }
+            }
+
+            function displayCart() {
+                const cartSection = document.getElementById('cart-section');
+                if (!cartSection) return;
+
+                let html = '<h2>Shopping Cart</h2>';
+                const items = Object.entries(cart);
+
+                if (items.length === 0) {
+                    html += '<p>Your cart is empty.</p>';
+                } else {
+                    let total = 0;
+                    html += '<div style="max-width: 800px; margin: 0 auto;">';
+                    items.forEach(([name, item]) => {
+                        const itemTotal = item.quantity * parseFloat(item.price);
+                        total += itemTotal;
+                        html += `
+                            <div style="display: flex; justify-content: space-between; align-items: center; padding: 15px; margin-bottom: 10px; background: white; border-radius: 4px; border: 1px solid #ddd;">
+                                <div>
+                                    <strong style="text-transform: capitalize;">${name}</strong><br>
+                                    <span style="color: #666;">$${parseFloat(item.price).toFixed(2)} each</span>
+                                </div>
+                                <div style="display: flex; align-items: center; gap: 15px;">
+                                    <button onclick="updateQuantity('${name}', -1)" style="padding: 5px 10px; cursor: pointer;">-</button>
+                                    <span>${item.quantity}</span>
+                                    <button onclick="updateQuantity('${name}', 1)" style="padding: 5px 10px; cursor: pointer;">+</button>
+                                    <span style="min-width: 80px; text-align: right;">$${itemTotal.toFixed(2)}</span>
+                                    <button onclick="removeFromCart('${name}')" style="padding: 5px 10px; background: #c00; color: white; border: none; border-radius: 4px; cursor: pointer;">Remove</button>
+                                </div>
+                            </div>
+                        `;
+                    });
+                    html += `
+                        <div style="margin-top: 20px; padding: 20px; background: #e8f4f8; border-radius: 4px;">
+                            <h3>Total: $${total.toFixed(2)}</h3>
+                            <button onclick="checkout()" style="padding: 12px 24px; background: #1952b6; color: white; border: none; border-radius: 4px; cursor: pointer; font-size: 1.1em; font-weight: bold;">Checkout</button>
+                        </div>
+                    `;
+                    html += '</div>';
+                }
+                cartSection.innerHTML = html;
+            }
+
+            function updateQuantity(productName, change) {
+                if (cart[productName]) {
+                    cart[productName].quantity += change;
+                    if (cart[productName].quantity <= 0) {
+                        delete cart[productName];
+                    }
+                    saveCart();
+                    displayCart();
+                }
+            }
+
+            function removeFromCart(productName) {
+                delete cart[productName];
+                saveCart();
+                displayCart();
+            }
+
+            async function checkout() {
+                if (Object.keys(cart).length === 0) {
+                    alert('Your cart is empty!');
+                    return;
+                }
+
+                // Redirect to payment page
+                showSection('payment');
+                return;
+
+                // Simple payment confirmation
+                const total = Object.values(cart).reduce((sum, item) => sum + (item.quantity * parseFloat(item.price)), 0);
+                const confirmPayment = confirm(`Process payment of $${total.toFixed(2)}?\n\nClick OK to complete your order.`);
+
+                if (!confirmPayment) {
+                    return;
+                }
+
+                try {
+                    const apiEndpoint = 'https://0nc4thyuwl.execute-api.us-east-1.amazonaws.com/Prod';
+                    const response = await fetch(`${apiEndpoint}/orders`, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(cart)
+                    });
+
+                    const result = await response.json();
+                    console.log('Order response:', result);
+
+                    if (result.order_id || result.message === 'Order created successfully') {
+                        const orderId = result.order_id;
+                        alert(`Order placed successfully!\nOrder ID: ${orderId}\n\nRedirecting to order history...`);
+
+                        // Clear cart
+                        cart = {};
+                        saveCart();
+
+                        // Switch to orders section
+                        showSection('orders');
+
+                        // Force page reload to refresh React component
+                        setTimeout(() => {
+                            window.location.reload();
+                        }, 1000);
+                    } else {
+                        alert('Order created but no order ID returned. Check Order History.');
+                        cart = {};
+                        saveCart();
+                        showSection('orders');
+                    }
+                } catch (error) {
+                    console.error('Checkout error:', error);
+                    alert('Failed to place order. Please try again.');
+                }
+            }
+
+            function formatCardNumber(input) {
+                let value = input.value.replace(/\D/g, ''); // Remove non-digits
+                let formattedValue = '';
+                for (let i = 0; i < value.length; i++) {
+                    if (i > 0 && i % 4 === 0) {
+                        formattedValue += ' ';
+                    }
+                    formattedValue += value[i];
+                }
+                input.value = formattedValue;
+            }
+
+            function formatExpiryDate(input) {
+                let value = input.value.replace(/\D/g, ''); // Remove non-digits
+
+                // If empty, allow it
+                if (value.length === 0) {
+                    input.value = '';
+                    return;
+                }
+
+                // Validate month (01-12)
+                if (value.length >= 1) {
+                    let firstDigit = parseInt(value[0]);
+
+                    // If first digit is > 1, prepend 0
+                    if (firstDigit > 1 && value.length === 1) {
+                        value = '0' + value;
+                    }
+
+                    if (value.length >= 2) {
+                        let month = parseInt(value.substring(0, 2));
+                        if (month > 12) {
+                            value = '12' + value.substring(2);
+                        } else if (month === 0) {
+                            value = '01' + value.substring(2);
+                        }
+                    }
+                }
+
+                // Format with slash
+                if (value.length >= 3) {
+                    value = value.substring(0, 2) + '/' + value.substring(2, 4);
+                }
+
+                input.value = value;
+            }
+
+            function displayPaymentSummary() {
+                const summaryDiv = document.getElementById('payment-summary');
+                if (!summaryDiv) return;
+
+                let html = '';
+                let total = 0;
+
+                Object.entries(cart).forEach(([name, item]) => {
+                    const itemTotal = item.quantity * parseFloat(item.price);
+                    total += itemTotal;
+                    html += `
+                        <div style="display: flex; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid #eee;">
+                            <span style="text-transform: capitalize;">${name} x ${item.quantity}</span>
+                            <span>$${itemTotal.toFixed(2)}</span>
+                        </div>
+                    `;
+                });
+
+                html += `
+                    <div style="display: flex; justify-content: space-between; padding: 15px 0; font-size: 1.2em; font-weight: bold;">
+                        <span>Total:</span>
+                        <span>$${total.toFixed(2)}</span>
+                    </div>
+                `;
+
+                summaryDiv.innerHTML = html;
+            }
+
+            async function processPayment(event) {
+                event.preventDefault();
+
+                try {
+                    const apiEndpoint = 'https://0nc4thyuwl.execute-api.us-east-1.amazonaws.com/Prod';
+                    const response = await fetch(`${apiEndpoint}/orders`, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(cart)
+                    });
+
+                    const result = await response.json();
+                    console.log('Order response:', result);
+
+                    if (result.order_id || result.message === 'Order created successfully') {
+                        const orderId = result.order_id;
+                        alert(`Payment successful!\nOrder ID: ${orderId}\n\nRedirecting to order history...`);
+
+                        // Clear cart
+                        cart = {};
+                        saveCart();
+
+                        // Switch to orders section
+                        showSection('orders');
+
+                        // Force page reload to refresh React component
+                        setTimeout(() => {
+                            window.location.reload();
+                        }, 1000);
+                    } else {
+                        alert('Order created but no order ID returned. Check Order History.');
+                        cart = {};
+                        saveCart();
+                        showSection('orders');
+                    }
+                } catch (error) {
+                    console.error('Payment error:', error);
+                    alert('Payment failed. Please try again.');
                 }
             }
 
             // Show products by default on page load
             window.addEventListener('DOMContentLoaded', function () {
+                updateCartCount();
                 showSection('products');
             });
         </script>

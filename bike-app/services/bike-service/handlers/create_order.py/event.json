@@ -1,0 +1,62 @@
+{
+    "cassette": {
+        "id": 1,
+        "quantity": 0,
+        "price": "50.00"
+    },
+    "crankset": {
+        "id": 2,
+        "quantity": 0,
+        "price": "215.00"
+    },
+    "chain": {
+        "id": 3,
+        "quantity": 0,
+        "price": "35.00"
+    },
+    "bell": {
+        "id": 4,
+        "quantity": 0,
+        "price": "18.00"
+    },
+    "gear shifter": {
+        "id": 5,
+        "quantity": 0,
+        "price": "32.00"
+    },
+    "inner tube": {
+        "id": 6,
+        "quantity": 0,
+        "price": "14.00"
+    },
+    "saddle": {
+        "id": 7,
+        "quantity": 0,
+        "price": "55.00"
+    },
+    "wheel": {
+        "id": 8,
+        "quantity": 2,
+        "price": "179.00"
+    },
+    "pedals": {
+        "id": 9,
+        "quantity": 0,
+        "price": "79.00"
+    },
+    "brake disk": {
+        "id": 10,
+        "quantity": 0,
+        "price": "45.00"
+    },
+    "hydraulic brake": {
+        "id": 11,
+        "quantity": 0,
+        "price": "69.00"
+    },
+    "sports glasses": {
+        "id": 12,
+        "quantity": 1,
+        "price": "129.00"
+    }
+}

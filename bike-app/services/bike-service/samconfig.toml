@@ -7,3 +7,4 @@ s3_prefix = "Bike-Website"
 region = "us-east-1"
 capabilities = "CAPABILITY_IAM"
 image_repositories = []
+confirm_changeset = true

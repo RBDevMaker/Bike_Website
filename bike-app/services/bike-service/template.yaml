@@ -11,6 +11,11 @@ Globals:
     Timeout: 3
 
 Resources:
+  BikeAPI:
+    Type: AWS::Serverless::Api
+    Properties:
+      StageName: Prod
+
   GetProductsFunction:
     Type: AWS::Serverless::Function
     Properties:
@@ -26,6 +31,7 @@ Resources:
         GetProducts:
           Type: Api
           Properties:
+            RestApiId: !Ref BikeAPI
             Path: /products
             Method: get
 
@@ -44,6 +50,7 @@ Resources:
         GetOrders:
           Type: Api
           Properties:
+            RestApiId: !Ref BikeAPI
             Path: /orders
             Method: get
 
@@ -62,8 +69,28 @@ Resources:
         GetOrderDetails:
           Type: Api
           Properties:
+            RestApiId: !Ref BikeAPI
             Path: /orders/{id}
             Method: get
+
+  CreateOrderFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: handlers/create_order.py
+      Handler: create_order.lambda_handler
+      Runtime: python3.12
+      Architectures:
+        - x86_64
+      Policies:
+        - DynamoDBCrudPolicy:
+            TableName: !Ref OrdersTable
+      Events:
+        CreateOrder:
+          Type: Api
+          Properties:
+            RestApiId: !Ref BikeAPI
+            Path: /orders
+            Method: post
 
   ProductsTable:
     Type: "AWS::DynamoDB::Table"
@@ -98,22 +125,28 @@ Resources:
 Outputs:
   MicroserviceApi:
     Description: "API Gateway endpoint URL for Prod stage"
-    Value: !Sub "https://${ServerlessRestApi}.execute-api.${AWS::Region}.${AWS::URLSuffix}/Prod/"
+    Value: !Sub "https://${BikeAPI}.execute-api.${AWS::Region}.${AWS::URLSuffix}/Prod/"
   GetProductsFunction:
     Description: "GetProductsFunction ARN"
     Value: !GetAtt GetProductsFunction.Arn
   EndpointForGetProducts:
     Description: "API Gateway endpoint URL for Get Products function"
-    Value: !Sub "https://${ServerlessRestApi}.execute-api.${AWS::Region}.${AWS::URLSuffix}/Prod/products/"
+    Value: !Sub "https://${BikeAPI}.execute-api.${AWS::Region}.${AWS::URLSuffix}/Prod/products/"
   GetOrdersFunction:
     Description: "GetOrdersFunction ARN"
     Value: !GetAtt GetOrdersFunction.Arn
   EndpointForGetOrders:
     Description: "API Gateway endpoint URL for Get Orders function"
-    Value: !Sub "https://${ServerlessRestApi}.execute-api.${AWS::Region}.${AWS::URLSuffix}/Prod/orders/"
+    Value: !Sub "https://${BikeAPI}.execute-api.${AWS::Region}.${AWS::URLSuffix}/Prod/orders/"
   GetOrderDetailsFunction:
     Description: "GetOrderDetailsFunction ARN"
     Value: !GetAtt GetOrderDetailsFunction.Arn
   EndpointForGetOrderDetails:
     Description: "API Gateway endpoint URL for Get Order Details function"
-    Value: !Sub "https://${ServerlessRestApi}.execute-api.${AWS::Region}.${AWS::URLSuffix}/Prod/orders/{id}"
+    Value: !Sub "https://${BikeAPI}.execute-api.${AWS::Region}.${AWS::URLSuffix}/Prod/orders/{id}"
+  CreateOrderFunction:
+    Description: "CreateOrderFunction ARN"
+    Value: !GetAtt CreateOrderFunction.Arn
+  EndpointForCreateOrder:
+    Description: "API Gateway endpoint URL for Create Order function"
+    Value: !Sub "https://${BikeAPI}.execute-api.${AWS::Region}.${AWS::URLSuffix}/Prod/orders"
