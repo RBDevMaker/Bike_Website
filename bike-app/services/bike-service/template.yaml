@@ -11,10 +11,64 @@ Globals:
     Timeout: 3
 
 Resources:
+  BikeUserPool:
+    Type: AWS::Cognito::UserPool
+    Properties:
+      UserPoolName: BikeShopUserPool
+      AutoVerifiedAttributes:
+        - email
+      UsernameAttributes:
+        - email
+      Schema:
+        - Name: email
+          AttributeDataType: String
+          Required: true
+          Mutable: false
+      Policies:
+        PasswordPolicy:
+          MinimumLength: 8
+          RequireUppercase: true
+          RequireLowercase: true
+          RequireNumbers: true
+          RequireSymbols: true
+
+  BikeUserPoolClient:
+    Type: AWS::Cognito::UserPoolClient
+    Properties:
+      ClientName: BikeShopWebClient
+      UserPoolId: !Ref BikeUserPool
+      GenerateSecret: false
+      AllowedOAuthFlows:
+        - code
+      AllowedOAuthScopes:
+        - email
+        - openid
+        - phone
+      AllowedOAuthFlowsUserPoolClient: true
+      CallbackURLs:
+        - http://localhost:8083/absproxy/8081
+      SupportedIdentityProviders:
+        - COGNITO
+
+  BikeUserPoolDomain:
+    Type: AWS::Cognito::UserPoolDomain
+    Properties:
+      Domain: !Sub "bikeshop-${AWS::AccountId}"
+      UserPoolId: !Ref BikeUserPool
+
   BikeAPI:
     Type: AWS::Serverless::Api
     Properties:
       StageName: Prod
+      Cors:
+        AllowMethods: "'GET,POST,PUT,DELETE,OPTIONS'"
+        AllowHeaders: "'Content-Type,Authorization'"
+        AllowOrigin: "'*'"
+      Auth:
+        DefaultAuthorizer: CognitoAuthorizer
+        Authorizers:
+          CognitoAuthorizer:
+            UserPoolArn: !Sub "arn:aws:cognito-idp:${AWS::Region}:${AWS::AccountId}:userpool/us-east-1_BYyFWm8XX"
 
   GetProductsFunction:
     Type: AWS::Serverless::Function
@@ -34,6 +88,8 @@ Resources:
             RestApiId: !Ref BikeAPI
             Path: /products
             Method: get
+            Auth:
+              Authorizer: NONE
 
   GetOrdersFunction:
     Type: AWS::Serverless::Function
@@ -53,6 +109,12 @@ Resources:
             RestApiId: !Ref BikeAPI
             Path: /orders
             Method: get
+        GetOrdersOptions:
+          Type: Api
+          Properties:
+            RestApiId: !Ref BikeAPI
+            Path: /orders
+            Method: options
 
   GetOrderDetailsFunction:
     Type: AWS::Serverless::Function
@@ -72,6 +134,12 @@ Resources:
             RestApiId: !Ref BikeAPI
             Path: /orders/{id}
             Method: get
+        GetOrderDetailsOptions:
+          Type: Api
+          Properties:
+            RestApiId: !Ref BikeAPI
+            Path: /orders/{id}
+            Method: options
 
   CreateOrderFunction:
     Type: AWS::Serverless::Function
@@ -150,3 +218,12 @@ Outputs:
   EndpointForCreateOrder:
     Description: "API Gateway endpoint URL for Create Order function"
     Value: !Sub "https://${BikeAPI}.execute-api.${AWS::Region}.${AWS::URLSuffix}/Prod/orders"
+  UserPoolId:
+    Description: "Cognito User Pool ID"
+    Value: !Ref BikeUserPool
+  UserPoolClientId:
+    Description: "Cognito User Pool Client ID"
+    Value: !Ref BikeUserPoolClient
+  UserPoolDomain:
+    Description: "Cognito Hosted UI Domain"
+    Value: !Sub "https://bikeshop-${AWS::AccountId}.auth.${AWS::Region}.amazoncognito.com"

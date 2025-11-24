@@ -29,7 +29,7 @@ def lambda_handler(event, context):
             'headers': {
                 'Content-Type': 'application/json',
                 'Access-Control-Allow-Origin': '*',
-                'Access-Control-Allow-Headers': 'Content-Type',
+                'Access-Control-Allow-Headers': 'Content-Type,Authorization',
                 'Access-Control-Allow-Methods': 'GET,OPTIONS'
             },
             'body': json.dumps(orders, default=decimal_default)
@@ -41,7 +41,7 @@ def lambda_handler(event, context):
             'headers': {
                 'Content-Type': 'application/json',
                 'Access-Control-Allow-Origin': '*',
-                'Access-Control-Allow-Headers': 'Content-Type',
+                'Access-Control-Allow-Headers': 'Content-Type,Authorization',
                 'Access-Control-Allow-Methods': 'GET,OPTIONS'
             },
             'body': json.dumps({'message': 'Error retrieving orders'})
